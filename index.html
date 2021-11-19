@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="CIS3342-2 Lab4">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors, James Burton">
+    <meta name="generator" content="Hugo 0.88.1">
+    <title>James Lab4</title>
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/sign-in/">
+    <!-- Bootstrap core CSS -->
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Favicons -->
+	<link rel="icon" href="images/favicon.ico">
+	<meta name="theme-color" content="#7952b3">
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+    <!-- Custom styles for this template -->
+    <link href="css/signin.css" rel="stylesheet">
+	<script src="js/jquery-3.6.0.min.js"></script>
+	<script src="js/routing.js"></script>
+	<script src="js/lab4.js"></script>
+</head> 
+<body class="text-center">
+    <main class="form-signin"> <!-- Signin Form --->
+		<div id="loginForm">
+			<form id="LoginView"> <!-- Login View Form --->
+				<img class="mb-4" src="images/batmanWelcom.jpg" alt="Batcave" width="300" height="157">  <!-- Main Logo --->
+				<h1 class="h3 mb-3 fw-normal">Please sign in</h1> <!-- Form Title --->
+				<div class="form-floating"> <!-- Email --->
+					<input id="floatingInput" type="email" name="loginEmail" class="form-control"  placeholder="name@example.com" required> <!-- Input Field for Email --->
+					<label for="floatingInput">Email address</label> <!-- Email Label --->
+				</div>
+				<div class="form-floating"> <!-- Password --->
+					<input id="floatingPassword" type="password" name="loginPassword" class="form-control"  placeholder="Password" required> <!-- Input Field for Password --->
+					<label for="floatingPassword">Password</label> <!-- Password Label --->
+				</div>
+				<div class="checkbox mb-3"> <!-- Remeber Checkbox --->
+					<label><input id="RememberMe" type="checkbox" name="RememberMe" value="Remember-User" > Remember me</label> <!-- Remeber Checkbox --->
+				</div>
+				<button id="loginSubmit" class="w-100 mb-1 btn btn-lg btn-primary" type="submit" >Sign in</button> <!-- Signin Button --->
+				<div id="loginMessage" class="btn btn-info mb-1"></div>
+			</form>
+			<a href="#"><button id="register0Btn" class="btn btn-primary" >Register</button></a> <!-- Register Button/linking php register 0--->
+			<a href="#"><button id="resetPassword0Btn" class="btn btn-primary" >Forgot</button></a> <!-- Forgot Button --->
+		</div>
+		<div id="registerForm">
+			<form id="RegisterView"> <!-- Register View Form --->
+				<img class="mb-4" src="images/batmanRegister.jpg" alt="BatmanRegister" width="300" height="400">
+				<h1 class="h3 mb-3 fw-normal">Please Register</h1>
+
+				<div class="form-floating"> <!-- First Name --->
+				<input id="FirstName" type="text" class="form-control"  name="FirstName" > <!-- Input Field for First Name --->
+				<label for="FirstName" required>First Name</label><!-- First Name Label --->
+				</div>
+
+				<div class="form-floating"> <!-- Last Name --->
+				<input id="LastName" type="text" class="form-control"  Name="LastName" placeholder="Last"><!-- Input Field for Last Name --->
+				<label for="LastName" required>Last Name</label><!-- Last Name Label --->
+				</div>
+
+				<div class="form-floating"> <!-- Email Address --->
+				<input id="registerEmail" type="email" class="form-control"  Name="Email" placeholder="name@example.com"><!-- Input Field for Email --->
+				<label for="Email">Email address</label><!-- Email Label --->
+				</div>
+				<button id="registerSubmit" class="w-100 mb-1 btn btn-lg btn-primary" type="submit">Register</button><!-- Register Button --->
+				<div id="registerMessage" class="btn btn-info mb-1"></div>
+			</form>
+			<form> <!-- Authenticate View Form --->
+				<input id="confCode" class="form-control mb-1" type="text" size="5" name="Acode" placeholder="Confirmation Code" required>
+					<button id="confirmCodeBtn" type="submit" class="btn btn-lg btn-primary mb-1" >Confirm</button>
+			</form>
+			<a href="#"><button id="backBtn" class="btn btn-primary" >Back</button></a> <!-- Back Button --->
+		</div>
+		<div id="setPasswordForm">
+			<form id="SetPasswordView"> <!-- Set Password View Form --->
+				<img class="mb-4" src="images/batmanAuth.png" alt="" width="300" height="200">
+				<h1 class="h3 mb-3 fw-normal">Please Set Up Password</h1>
+
+				<div class="form-floating"> <!-- Password --->
+				<input type="password" class="form-control" id="setPassword" Name="Password" placeholder="Password">
+				<label for="setPassword" required>Password</label>
+				</div>
+
+				<div id="setPasswordMessage" class="btn btn-info mb-1"> <!-- Password Confirmation--->
+				</div>
+
+				<button id="setPasswordSubmit" class="w-100 mb-1 btn btn-lg btn-primary" type="submit">Submit Password</button>
+				<div id="setPasswordMessage" class="btn btn-info"></div>
+			</form>
+			<a href="#"><button class="btn btn-primary" id="backBtn">Back</button></a><!-- Back Button --->
+		</div>
+		<div id="resetPasswordForm">
+			<form id="ResetPasswordView"> <!-- Reset Password View Form --->
+			<img class="mb-4" src="images/batmanAuth.png" alt="" width="300" height="200">
+				<h1 class="h3 mb-3 fw-normal">Please enter registration email to resest password.</h1>
+				<div class="form-floating"> <!-- Email Address --->
+					<input id="resetPasswordEmail" type="email" class="form-control"  Name="Email" placeholder="name@example.com"><!-- Input Field for Email --->
+					<label for="resetPasswordEmail">Email address</label><!-- Email Label --->
+				</div>
+				<button id="resetPasswordBtn" class="w-100 mb-1 btn btn-lg btn-primary" type="submit">Request Confirmation Code</button><!-- Register Button --->
+				<div id="resetPasswordMessage" class="btn btn-info mb-1" ></div>
+			</form>
+			<form> <!-- Authenticate View Form --->
+				<input id="confCode2" class="form-control mb-1" type="text" size="5"  name="Acode" placeholder="Confirmation New Code" required><!-- New Acode --->
+					<button id="confirmBtn" type="submit" class="btn btn-lg btn-primary mb-1">Confirm</button>
+			</form>
+			<a href="#"><button id="backBtn2" class="btn btn-primary">Back</button></a> <!-- Back Button --->
+		</div>
+		<div id="resumeForm">
+		   <form id="resumeSessionView"> 
+				<img class="mb-4" src="images/batmanAuth.png" alt="" width="300" height="200">
+				<h1 class="h3 mb-3 fw-normal">Please choose your option</h1>
+
+				<div class="form-floating"> 
+					<a href="php/resume.php">
+						<button type="button" class="btn btn-primary mb-1" id="rememberContinue">
+							Continue
+						</button>
+					</a>
+					<a href="php/logout2.php">
+						<button type="button" class="btn btn-danger" id="rememberLogout">
+							Logout (RememberMe disabled)
+						</button>
+					</a>
+				</div>
+			</form>
+		</div>
+    </main>
+</body>
+</html>
+
