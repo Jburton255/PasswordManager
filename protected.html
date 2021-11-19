@@ -1,0 +1,60 @@
+<!DOCTYPE HTML>
+<html>
+<head>  <!--Script & Link tags (Jquery & Bootstrap) -->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <!-- Move To JS Folder -->
+        <script src="js/jquery-3.6.0.min.js"></script>
+	      <script src="js/routing.js"></script>
+	      <script src="js/lab4.js"></script>
+        <!-- Move To CSS Folder -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="css/lab4.css">
+
+        <link rel="icon" href="images/favicon.ico" type="image/x-icon" sizes="48x48">
+</head>
+<body class="bg-image" style="background-color: deepskyblue;"> <!-- Alarm Clock Application -->
+    <table class="table-secondary" style="margin: 0% auto;"> <!-- Table containing Clock & Functional Buttons -->
+      <tr> <!-- Table Heading -->
+        <th colspan="12"><center><h1 class="display-4">Alarm Clock</h1></center></th>
+      </tr>
+      <tr class="table-primary"> <!-- Date/Time setting inputs/submit -->
+        <th colspan="2.4"></th>
+        <th colspan="2.4"><input type="date" id="datePicker" required></th>
+        <th colspan="2.4"><input type="time" id="timePicker" required></th>
+        <th colspan="2.4"><button type="button" id="btnSet" class="btn btn-primary btn-lg btn-block">Set Alarm Time</button></th>
+        <th colspan="2.4"></th>
+      </tr>
+      <tr> <!-- Input/Display field for time countdown (D,H,M,S,MS) -->
+        <td colspan="2.4"><input class="manual" id="days" type="number" value="0" max="365"></td>
+        <td colspan="2.4"><input class="manual" id="hours" type="number" value="0" max="23"></td>
+        <td colspan="2.4"><input class="manual" id="minutes" type="number" value="0" max="59"></td>
+        <td colspan="2.4"><input class="manual" id="seconds" type="number" value="0" max="59"></td>
+        <td colspan="2.4"><input class="manual" id="mSeconds" type="number" value="0" max="59"></td>
+      </tr>
+      <tr class="table-primary"> <!-- Labels for Input/Display fields (D,H,M,S,MS) -->
+        <td colspan="2.4"><h4>Days</h4></td>
+        <td colspan="2.4"><h4>Hours</h4></td>
+        <td colspan="2.4"><h4>Minutes</h4></td>
+        <td colspan="2.4"><h4>Seconds</h4></td>
+        <td colspan="2.4"><h4>Milliseconds</h4></td>
+      </tr>
+      <tr> <!-- Start/Snooze Buttons -->
+        <td colspan="2"><!-- Start -->
+          <button id="btnStart" class="btn btn-success btn-lg btn-block" >Start</button>
+        </td>
+        <td colspan="8"> <!-- Snooze -->
+          <center><button type="button" id="btnSnooze" class="btn btn-danger btn-lg btn-block">Snooze</button></center>
+        </td>
+        <td colspan="2">
+            <button class="btn btn-warning" id="btnReset">Reset</button>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="5">
+            <a href="#"><button id="logout" class="btn btn-danger">Log Out</button></a>
+        </td>
+    </tr>
+    </table>
+  </body>
+</html>   
